@@ -34,18 +34,42 @@ img{
     grid-template-rows: 350px 100px 350px;
     grid-gap: 30px;
     padding: 30px;
+    grid-template-areas: 
+    "h1 h1 h2 h3"
+    "h4 h5 h2 h3"
+    "h4 h5 h6 h6";
 }
 .layout-item{
     border-radius:10px ;
     overflow: hidden;
 }
+
 .layout-item:first-child{
-    /* grid-column: 1/3; */
-    grid-column: 1/ span 2; /* có thể dùng span thay thế cho 1/3, cách lấy đc span đó chính lấy số cột kết thúc - cho cột bắt đầu 
-    VD: bức hình muốn chiếm từ cột 1 đến 3 thì chúng ta sẽ span như sau span = 3 -1 =  2 span*/
-    grid-row: 1/2;
+    grid-area: h1;
 }
-.layout-item:nth-child(2),
+.layout-item:nth-child(2){
+    grid-area: h2;
+}
+.layout-item:nth-child(3){
+    grid-area: h3;
+}
+.layout-item:nth-child(4){
+    grid-area: h4;
+}
+.layout-item:nth-child(5){
+    grid-area: h5;
+}
+.layout-item:last-child{
+    grid-area: h6;
+}
+
+/* .layout-item:first-child{ */
+    /* grid-column: 1/3; */
+    /* grid-column: 1/ span 2; có thể dùng span thay thế cho 1/3, cách lấy đc span đó chính lấy số cột kết thúc - cho cột bắt đầu 
+    VD: bức hình muốn chiếm từ cột 1 đến 3 thì chúng ta sẽ span như sau span = 3 -1 =  2 span */
+    /* grid-row: 1/2;
+} */
+/* .layout-item:nth-child(2),
 .layout-item:nth-child(3){
     grid-row: 1/3;
 }
@@ -55,4 +79,14 @@ img{
 }
 .layout-item:last-child{
     grid-column: 3/5;
-}
+    
+} */
+
+/* grid-template-areas: dành cho phần tử cha 
+    grid-area: dành cho phần tử con
+    vd cho phần tử cha
+    h1 h1 h2 h3
+    h4 h5 h2 h3
+    h4 h5 h6 h6
+    */
+
